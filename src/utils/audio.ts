@@ -451,6 +451,105 @@ class SoundEngine {
       osc.stop(t + 1.3);
     });
   }
+
+  // Realistic Firecracker Explosion: Rocket Whistle -> Explosive Boom -> Fizzy Crackles
+  public playSingleFirecracker(delaySeconds: number = 0, pitchVariation: number = 1.0) {
+    if (this.isMuted) return;
+    this.initContext();
+    if (!this.ctx || !this.sfxGain) return;
+
+    const t = this.ctx.currentTime + delaySeconds;
+
+    // 1. Rocket Whistle / Launch Whoosh
+    const whistleOsc = this.ctx.createOscillator();
+    const whistleGain = this.ctx.createGain();
+    whistleOsc.type = 'sawtooth';
+    whistleOsc.frequency.setValueAtTime(450 * pitchVariation, t);
+    whistleOsc.frequency.exponentialRampToValueAtTime(2000 * pitchVariation, t + 0.22);
+
+    whistleGain.gain.setValueAtTime(0.001, t);
+    whistleGain.gain.linearRampToValueAtTime(0.14, t + 0.1);
+    whistleGain.gain.exponentialRampToValueAtTime(0.0001, t + 0.24);
+
+    whistleOsc.connect(whistleGain);
+    whistleGain.connect(this.sfxGain);
+    whistleOsc.start(t);
+    whistleOsc.stop(t + 0.25);
+
+    // 2. Heavy Blast Boom (at t + 0.22s)
+    const boomTime = t + 0.22;
+
+    // Sub-bass thud punch
+    const boomOsc = this.ctx.createOscillator();
+    const boomGain = this.ctx.createGain();
+    boomOsc.type = 'sine';
+    boomOsc.frequency.setValueAtTime(170 * pitchVariation, boomTime);
+    boomOsc.frequency.exponentialRampToValueAtTime(30, boomTime + 0.38);
+
+    boomGain.gain.setValueAtTime(0.5, boomTime);
+    boomGain.gain.exponentialRampToValueAtTime(0.001, boomTime + 0.48);
+
+    boomOsc.connect(boomGain);
+    boomGain.connect(this.sfxGain);
+    boomOsc.start(boomTime);
+    boomOsc.stop(boomTime + 0.5);
+
+    // Explosive Noise Burst
+    const bufferSize = Math.floor(this.ctx.sampleRate * 0.45);
+    const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.25));
+    }
+    const noise = this.ctx.createBufferSource();
+    noise.buffer = buffer;
+
+    const blastFilter = this.ctx.createBiquadFilter();
+    blastFilter.type = 'lowpass';
+    blastFilter.frequency.setValueAtTime(1600, boomTime);
+    blastFilter.frequency.linearRampToValueAtTime(350, boomTime + 0.35);
+
+    const blastGain = this.ctx.createGain();
+    blastGain.gain.setValueAtTime(0.55, boomTime);
+    blastGain.gain.exponentialRampToValueAtTime(0.001, boomTime + 0.4);
+
+    noise.connect(blastFilter);
+    blastFilter.connect(blastGain);
+    blastGain.connect(this.sfxGain);
+    noise.start(boomTime);
+
+    // 3. Patakha Crackle & Sparkle Shower (rapid sharp mini-pops)
+    const crackleCount = 14;
+    for (let i = 0; i < crackleCount; i++) {
+      const popTime = boomTime + 0.06 + Math.random() * 0.48;
+      const popDur = 0.015 + Math.random() * 0.015;
+
+      const popOsc = this.ctx.createOscillator();
+      const popGain = this.ctx.createGain();
+      popOsc.type = 'square';
+      popOsc.frequency.setValueAtTime(900 + Math.random() * 2400, popTime);
+
+      popGain.gain.setValueAtTime(0.001, popTime);
+      popGain.gain.linearRampToValueAtTime(0.12 + Math.random() * 0.08, popTime + 0.003);
+      popGain.gain.exponentialRampToValueAtTime(0.001, popTime + popDur);
+
+      popOsc.connect(popGain);
+      popGain.connect(this.sfxGain);
+      popOsc.start(popTime);
+      popOsc.stop(popTime + popDur + 0.01);
+    }
+  }
+
+  // Grand Firecracker Show: Multi-rocket barrage + finale explosions
+  public playFirecrackerShow() {
+    this.playSingleFirecracker(0.0, 1.0);
+    this.playSingleFirecracker(0.3, 1.25);
+    this.playSingleFirecracker(0.7, 0.9);
+    this.playSingleFirecracker(1.1, 1.15);
+    // Double Finale Blast!
+    this.playSingleFirecracker(1.5, 0.85);
+    this.playSingleFirecracker(1.68, 1.35);
+  }
 }
 
 export const sound = new SoundEngine();

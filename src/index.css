@@ -1704,6 +1704,29 @@ h1, h2, h3, h4 {
   box-shadow: 0 14px 38px rgba(233, 30, 99, 0.45);
 }
 
+.tagde-fireworks-btn {
+  background: linear-gradient(135deg, #FF1493 0%, #FF4081 30%, #FF8F00 70%, #E91E63 100%);
+  background-size: 200% auto;
+  box-shadow: 0 10px 32px rgba(255, 64, 129, 0.4), 0 0 20px rgba(255, 215, 0, 0.3);
+  animation: gradientShine 4s linear infinite;
+}
+
+@keyframes gradientShine {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.is-firing-anim {
+  animation: firingVibration 0.15s ease infinite alternate !important;
+  box-shadow: 0 0 35px rgba(255, 20, 147, 0.8), 0 0 50px rgba(255, 215, 0, 0.6) !important;
+}
+
+@keyframes firingVibration {
+  0% { transform: scale(1.04) rotate(-1deg); }
+  100% { transform: scale(1.07) rotate(1deg); }
+}
+
 /* Sticky Wall */
 .sticky-wall-wrapper {
   margin-top: 2.5rem;

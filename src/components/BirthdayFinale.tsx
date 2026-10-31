@@ -1,18 +1,94 @@
-import React from 'react';
+import React, { useState } from 'react';
 import confetti from 'canvas-confetti';
-import { Sparkles, PartyPopper } from 'lucide-react';
+import { Sparkles, PartyPopper, Flame } from 'lucide-react';
 import { ShivaniCharacter, GymBuddyCharacter } from './Illustrations';
 import { sound } from '../utils/audio';
 
 export const BirthdayFinale: React.FC = () => {
-  const handleFireConfetti = () => {
-    sound.playConfettiPop();
+  const [isFiring, setIsFiring] = useState(false);
+
+  // Intense Grand Fireworks Show with Cracker Sounds
+  const handleFireFireworks = () => {
+    setIsFiring(true);
+    // Play realistic synthesized multi-rocket firecracker show!
+    sound.playFirecrackerShow();
+
+    const colors = ['#FF1493', '#FF69B4', '#FFD700', '#FF80AB', '#FFF', '#E91E63', '#FFEB3B'];
+    const shapes: ('star' | 'circle')[] = ['star', 'circle'];
+
+    // 1. Initial Left Rocket
     confetti({
-      particleCount: 100,
-      spread: 90,
-      origin: { y: 0.65 },
-      colors: ['#FF69B4', '#FF80AB', '#FFB6C1', '#FFD700', '#EDE7F6'],
+      particleCount: 120,
+      angle: 65,
+      spread: 75,
+      startVelocity: 65,
+      origin: { x: 0.08, y: 0.8 },
+      colors,
+      shapes,
     });
+
+    // 2. Right Rocket (300ms)
+    setTimeout(() => {
+      confetti({
+        particleCount: 120,
+        angle: 115,
+        spread: 75,
+        startVelocity: 65,
+        origin: { x: 0.92, y: 0.8 },
+        colors,
+        shapes,
+      });
+    }, 300);
+
+    // 3. Central Skyburst Star explosion (700ms)
+    setTimeout(() => {
+      confetti({
+        particleCount: 190,
+        spread: 130,
+        startVelocity: 55,
+        origin: { x: 0.5, y: 0.4 },
+        colors: ['#FFD700', '#FF69B4', '#FFF', '#FF4081'],
+        shapes: ['star'],
+      });
+    }, 700);
+
+    // 4. Twin Aerial Cannons (1100ms)
+    setTimeout(() => {
+      confetti({
+        particleCount: 130,
+        angle: 75,
+        spread: 85,
+        startVelocity: 62,
+        origin: { x: 0.25, y: 0.7 },
+        colors,
+        shapes,
+      });
+      confetti({
+        particleCount: 130,
+        angle: 105,
+        spread: 85,
+        startVelocity: 62,
+        origin: { x: 0.75, y: 0.7 },
+        colors,
+        shapes,
+      });
+    }, 1100);
+
+    // 5. GRAND FINALE BARRAGE (1500ms) - Mega 360-degree explosion!
+    setTimeout(() => {
+      confetti({
+        particleCount: 300,
+        spread: 180,
+        startVelocity: 75,
+        origin: { x: 0.5, y: 0.5 },
+        colors: ['#FFD700', '#FF1493', '#FFF', '#FF80AB', '#FFEB3B', '#FF4081'],
+        shapes: ['star', 'circle'],
+      });
+    }, 1500);
+
+    setTimeout(() => {
+      setIsFiring(false);
+    }, 2800);
   };
 
   return (
@@ -89,16 +165,20 @@ export const BirthdayFinale: React.FC = () => {
           </div>
         </div>
 
-        {/* Confetti Celebration Button */}
+        {/* Tagde Grand Fireworks & Crackers Button */}
         <div className="text-center my-6">
           <button
-            onClick={handleFireConfetti}
-            className="finale-confetti-btn"
+            onClick={handleFireFireworks}
+            className={`finale-confetti-btn tagde-fireworks-btn ${isFiring ? 'is-firing-anim' : ''}`}
             id="fire-confetti-btn"
           >
-            <Sparkles className="w-5 h-5 inline-block mr-2 text-yellow-300 animate-spin-slow" />
-            Launch Birthday Fireworks & Confetti 🎆
+            <Flame className="w-5 h-5 inline-block mr-2 text-yellow-300 animate-bounce" />
+            <span>💥 LAUNCH GRAND FIREWORKS & CRACKERS 🎆</span>
+            <Sparkles className="w-5 h-5 inline-block ml-2 text-yellow-300 animate-spin-slow" />
           </button>
+          <p className="text-xs font-bold text-pink-600 mt-2">
+            Sound on karein aur button dabayein! Real patakho ke dhamake ke saath! 🔊💥
+          </p>
         </div>
 
         {/* Very bottom clean line */}
