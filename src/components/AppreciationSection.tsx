@@ -15,7 +15,7 @@ export const AppreciationSection: React.FC = () => {
       tag: "True Support 🛡️",
       quote: "Having my back and encouraging me when it really matters.",
       icon: <ShieldCheck className="w-4 h-4 text-pink-500" />,
-      caption: "Real Friendship",
+      caption: "Real Bond",
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export const AppreciationSection: React.FC = () => {
       <div className="section-header">
         <div className="section-pill bg-pink-50 text-pink-700 border-pink-200">
           <Heart className="w-4 h-4 text-pink-500 fill-pink-400" />
-          <span>Heart-to-Heart • Friendship Note</span>
+          <span>Heart-to-Heart • Special Bond</span>
         </div>
         <h2 className="section-title font-playfair">
           Okay, Jokes Apart... 💕
@@ -58,7 +58,7 @@ export const AppreciationSection: React.FC = () => {
           </p>
 
           <p className="letter-paragraph highlight-quote">
-            "And I really appreciate those moments when you support me, encourage me and have my back. Sometimes it's the little things that make a friendship special, and I'm genuinely glad we share those moments."
+            "And I really appreciate those moments when you support me, encourage me and have my back. Sometimes it's the little things that make our bond special, and I'm genuinely glad we share those moments."
           </p>
 
           <p className="letter-paragraph">

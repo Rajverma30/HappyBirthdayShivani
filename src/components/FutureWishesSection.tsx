@@ -89,7 +89,7 @@ export const FutureWishesSection: React.FC = () => {
           <div className="future-special-request-box">
             <span className="request-tag">Bas Ek Chhoti Si Request Hai, Madam Ji... 😂</span>
             <p className="request-body">
-              "Keep growing, keep achieving everything you dream of, and make the most of every opportunity life brings your way. Bas itna yaad rakhna, distance chahe jitna ho jaaye, kuch friendships aur unki bakchodi hamesha special rehti hain. ❤️."
+              "Keep growing, keep achieving everything you dream of, and make the most of every opportunity life brings your way. Bas itna yaad rakhna, distance chahe jitna ho jaaye, kuch bonds aur unki bakchodi hamesha special rehti hain. ❤️"
             </p>
             <p className="request-sub">
               "Because some people are not meant to be forgotten, even when life takes them to different places. ❤️"
@@ -100,7 +100,7 @@ export const FutureWishesSection: React.FC = () => {
           <div className="future-highlight-banner">
             <Sparkles className="w-5 h-5 text-yellow-300 shrink-0" />
             <h3 className="highlight-banner-text">
-              DREAM BIG. ACHIEVE BIGGER. BUT DON'T FORGET YOUR OLD GYM PARTNER!
+              DREAM BIG. ACHIEVE BIGGER. BUT DON'T FORGET RAJ! 🏋️‍♂️
             </h3>
             <Sparkles className="w-5 h-5 text-yellow-300 shrink-0" />
           </div>

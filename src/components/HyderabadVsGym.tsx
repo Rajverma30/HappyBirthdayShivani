@@ -97,7 +97,7 @@ export const HyderabadVsGym: React.FC = () => {
               Your Spot Is Waiting For You! 😭
             </h4>
             <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
-              "Workout toh ho jaata hai... but bina tumhari bakchodi ke gym thoda boring lagta hai." Dumbbells are on the rack, your bench is reserved, and the gym buddy is lonely.
+              "Workout toh ho jaata hai... but bina tumhari bakchodi ke gym thoda boring lagta hai." Dumbbells are on the rack, your bench is reserved, and Raj is waiting for his workout buddy.
             </p>
             <div className="city-perks-list">
               <span className="perk-pill bg-pink-50 text-pink-700">🪑 Bench Reserved</span>

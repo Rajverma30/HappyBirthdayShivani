@@ -198,7 +198,7 @@ export const JokeHallOfFame: React.FC = () => {
             <div className="flex items-center justify-between pt-3 border-t border-pink-200">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-green-600" />
-                <span className="text-[11px] text-gray-600 font-medium">Certified by Gym Buddy ✍️</span>
+                <span className="text-[11px] text-gray-600 font-medium">Certified by Raj ✍️</span>
               </div>
               <button
                 onClick={() => setSelectedTrophy(null)}

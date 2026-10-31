@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroProps> = ({ onOpenSurprise }) => {
           <div className="character-card buddy-hero-card">
             <GymBuddyCharacter mood="irritated" size={175} />
             <div className="character-name-tag">
-              <span>Gym Buddy 🧢</span>
+              <span>Raj 🧢</span>
               <span className="sub-badge">Victim of Jokes</span>
             </div>
           </div>

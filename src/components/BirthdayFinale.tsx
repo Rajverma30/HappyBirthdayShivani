@@ -118,7 +118,7 @@ export const BirthdayFinale: React.FC = () => {
 
           <div className="finale-char-box">
             <GymBuddyCharacter mood="celebrating" size={160} />
-            <span className="text-xs font-extrabold text-gray-700 mt-1">Gym Buddy Partner 🧢</span>
+            <span className="text-xs font-extrabold text-gray-700 mt-1">Raj 🧢</span>
           </div>
         </div>
 
@@ -143,7 +143,7 @@ export const BirthdayFinale: React.FC = () => {
           </p>
 
           <p className="finale-message-para">
-            No matter how far life takes you, I hope we never lose this friendship and the crazy memories attached to it.
+            No matter how far life takes you, I hope we never lose this bond and the crazy memories attached to it.
           </p>
 
           <p className="finale-message-highlight">
@@ -154,8 +154,8 @@ export const BirthdayFinale: React.FC = () => {
           <div className="finale-signature-box">
             <div className="sig-heart">❤️</div>
             <div>
-              <p className="sig-title">Your Gym Partner in Bakchodi</p>
-              <p className="sig-sub">Certified Sufferer of Shivani's Jokes 🏋️‍♂️</p>
+              <p className="sig-title">Raj ❤️</p>
+              <p className="sig-sub">Your Gym Partner in Bakchodi 🏋️‍♂️</p>
             </div>
           </div>
 
@@ -177,7 +177,7 @@ export const BirthdayFinale: React.FC = () => {
             <Sparkles className="w-5 h-5 inline-block ml-2 text-yellow-300 animate-spin-slow" />
           </button>
           <p className="text-xs font-bold text-pink-600 mt-2">
-            Sound on karein aur button dabayein! Real patakho ke dhamake ke saath! 🔊💥
+
           </p>
         </div>
 

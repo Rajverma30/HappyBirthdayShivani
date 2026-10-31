@@ -121,7 +121,7 @@ export const GymChronicles: React.FC = () => {
 
           <div className="scene-character-wrapper">
             <GymBuddyCharacter mood={current.buddyMood} size={165} />
-            <span className="character-label">Gym Buddy 🧢</span>
+            <span className="character-label">Raj 🧢</span>
           </div>
         </div>
 

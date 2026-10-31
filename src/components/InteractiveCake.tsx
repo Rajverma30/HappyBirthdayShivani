@@ -199,7 +199,7 @@ export const InteractiveCake: React.FC<CakeProps> = ({ onCelebrate }) => {
               "Ab cake toh cut ho gaya... treat kab de rahi ho? 😂"
             </p>
             <p className="cake-celebration-quote">
-              "One cake, a thousand wishes, and one friendship I hope never gets old. 💗"
+              "One cake, a thousand wishes, and one special bond I hope never gets old. 💗"
             </p>
             <button
               onClick={handleReset}
