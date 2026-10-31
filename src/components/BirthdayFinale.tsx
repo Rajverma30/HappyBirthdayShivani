@@ -1,76 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import confetti from 'canvas-confetti';
-import { Sparkles, Send, PartyPopper, Check } from 'lucide-react';
+import { Sparkles, PartyPopper } from 'lucide-react';
 import { ShivaniCharacter, GymBuddyCharacter } from './Illustrations';
 import { sound } from '../utils/audio';
 
 export const BirthdayFinale: React.FC = () => {
-  const [stickyNotes, setStickyNotes] = useState<Array<{ id: number; author: string; text: string; color: string; rotation: number }>>([
-    {
-      id: 1,
-      author: "Gym Buddy 🧢",
-      text: "Reminder: You still owe me 1 protein shake and 500 apologies for those jokes! 🥤😂",
-      color: "bg-pink-100 border-pink-300",
-      rotation: -2,
-    },
-    {
-      id: 2,
-      author: "The Gym Dumbbells 🏋️",
-      text: "We miss you lifting us for 2 sets and gossiping for 40 minutes! Come back soon! 💗",
-      color: "bg-amber-100 border-amber-300",
-      rotation: 3,
-    },
-    {
-      id: 3,
-      author: "Bakchodi Dept 📜",
-      text: "Status: Unanimously voted Shivani as President for Life. No elections needed! 👑",
-      color: "bg-purple-100 border-purple-300",
-      rotation: -1,
-    },
-  ]);
-
-  const [newNote, setNewNote] = useState('');
-  const [newAuthor, setNewAuthor] = useState('');
-  const [hasAdded, setHasAdded] = useState(false);
-
   const handleFireConfetti = () => {
     sound.playConfettiPop();
     confetti({
-      particleCount: 90,
-      spread: 80,
-      origin: { y: 0.7 },
+      particleCount: 100,
+      spread: 90,
+      origin: { y: 0.65 },
       colors: ['#FF69B4', '#FF80AB', '#FFB6C1', '#FFD700', '#EDE7F6'],
     });
-  };
-
-  const handleAddStickyNote = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newNote.trim()) return;
-
-    sound.playClick();
-    const colors = [
-      'bg-pink-100 border-pink-300',
-      'bg-purple-100 border-purple-300',
-      'bg-rose-100 border-rose-300',
-      'bg-amber-100 border-amber-300',
-    ];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    const randomRot = (Math.random() * 6 - 3);
-
-    const note = {
-      id: Date.now(),
-      author: newAuthor.trim() || 'Gym Well-Wisher ✨',
-      text: newNote.trim(),
-      color: randomColor,
-      rotation: randomRot,
-    };
-
-    setStickyNotes([note, ...stickyNotes]);
-    setNewNote('');
-    setNewAuthor('');
-    setHasAdded(true);
-    handleFireConfetti();
-    setTimeout(() => setHasAdded(false), 3000);
   };
 
   return (
@@ -148,7 +90,7 @@ export const BirthdayFinale: React.FC = () => {
         </div>
 
         {/* Confetti Celebration Button */}
-        <div className="text-center my-8">
+        <div className="text-center my-6">
           <button
             onClick={handleFireConfetti}
             className="finale-confetti-btn"
@@ -159,68 +101,8 @@ export const BirthdayFinale: React.FC = () => {
           </button>
         </div>
 
-        {/* Sticky Notes & Wishes Wall */}
-        <div className="sticky-wall-wrapper">
-          <div className="text-center mb-6">
-            <h3 className="text-xl font-extrabold text-pink-900 font-playfair">
-              Birthday Wishes & Gym Notes Wall 📝🎀
-            </h3>
-            <p className="text-xs text-pink-600 mt-1">
-              Leave an extra birthday note or a funny message for Shivani on the wall!
-            </p>
-          </div>
-
-          {/* Add Note Form */}
-          <form onSubmit={handleAddStickyNote} className="sticky-note-form glass-panel">
-            <div className="sticky-note-form-row">
-              <input
-                type="text"
-                placeholder="Your name or nickname..."
-                value={newAuthor}
-                onChange={(e) => setNewAuthor(e.target.value)}
-                className="note-input-field note-input-name"
-              />
-              <input
-                type="text"
-                placeholder="Write a cute/funny birthday wish for Shivani..."
-                value={newNote}
-                onChange={(e) => setNewNote(e.target.value)}
-                className="note-input-field note-input-message"
-              />
-              <button type="submit" className="note-submit-btn">
-                <Send className="w-4 h-4 mr-1.5" />
-                Pin Note 📌
-              </button>
-            </div>
-            {hasAdded && (
-              <p className="text-xs text-green-700 font-bold mt-2 flex items-center justify-center gap-1">
-                <Check className="w-3.5 h-3.5" /> Note pinned to the wall! ✨
-              </p>
-            )}
-          </form>
-
-          {/* Sticky Notes Grid */}
-          <div className="sticky-notes-grid">
-            {stickyNotes.map((note) => (
-              <div
-                key={note.id}
-                className={`sticky-note-card ${note.color}`}
-                style={{ transform: `rotate(${note.rotation}deg)` }}
-              >
-                <div className="note-pin">📌</div>
-                <p className="note-text font-serif italic text-sm text-gray-800">
-                  "{note.text}"
-                </p>
-                <div className="note-author font-bold text-xs text-pink-800 mt-3 pt-2 border-t border-pink-200/60">
-                  — {note.author}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Very bottom clean line */}
-        <div className="text-center pt-8 pb-4 border-t border-pink-200 mt-12 text-xs text-pink-400 font-semibold">
+        <div className="text-center pt-8 pb-4 border-t border-pink-200 mt-10 text-xs text-pink-400 font-semibold">
           <p>
             Happy Birthday, Shivani! Keep smiling & shining bright! ✨
           </p>
