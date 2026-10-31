@@ -219,13 +219,10 @@ export const BirthdayFinale: React.FC = () => {
           </div>
         </div>
 
-        {/* Very bottom copyright/love line */}
-        <div className="text-center pt-8 pb-4 border-t border-pink-200 mt-12 text-xs text-pink-500 font-semibold">
+        {/* Very bottom clean line */}
+        <div className="text-center pt-8 pb-4 border-t border-pink-200 mt-12 text-xs text-pink-400 font-semibold">
           <p>
-            Designed with 💗, endless gym jokes, and Bundelkhandi love for Shivani's Birthday.
-          </p>
-          <p className="text-[10px] text-pink-400 mt-1">
-            Happy Birthday, Shivani! Keep shining bright! ✨
+            Happy Birthday, Shivani! Keep smiling & shining bright! ✨
           </p>
         </div>
       </div>
