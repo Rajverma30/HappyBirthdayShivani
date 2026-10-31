@@ -1714,38 +1714,75 @@ h1, h2, h3, h4 {
   margin-bottom: 2rem;
 }
 
+.sticky-note-form-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+  width: 100%;
+}
+
 .note-input-field {
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  border-radius: 14px;
   border: 1.5px solid #F8BBD0;
   background: #FFF;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
 }
+
 .note-input-field:focus {
   border-color: #E91E63;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.12);
+}
+
+.note-input-name {
+  flex: 1;
+  min-width: 160px;
+}
+
+.note-input-message {
+  flex: 2.5;
+  min-width: 260px;
 }
 
 .note-submit-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.4rem;
-  background: #C2185B;
+  padding: 0.85rem 1.6rem;
+  background: linear-gradient(135deg, #FF4081, #C2185B);
   color: #FFF;
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.85rem;
+  font-weight: 800;
+  font-size: 0.95rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.2s;
+  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.25);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
 }
+
 .note-submit-btn:hover {
-  background: #AD1457;
+  background: linear-gradient(135deg, #FF6095, #AD1457);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(233, 30, 99, 0.35);
+}
+
+@media (max-width: 768px) {
+  .sticky-note-form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .note-input-name, .note-input-message {
+    width: 100%;
+    min-width: unset;
+  }
 }
 
 .sticky-notes-grid {

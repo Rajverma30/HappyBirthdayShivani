@@ -214,14 +214,6 @@ export const GymBuddyCharacter: React.FC<BuddyProps> = ({ mood = 'workout', size
       {/* Background shadow */}
       <circle cx="100" cy="100" r="90" fill="url(#blueGlow)" opacity="0.2" />
 
-      {/* Hair */}
-      <path
-        d="M72 65 C68 45, 128 42, 132 65 C132 65, 125 55, 100 55 C78 55, 72 65, 72 65 Z"
-        fill="#263238"
-      />
-      {/* Short messy spikes */}
-      <path d="M78 55 L82 45 L90 52 L98 42 L106 52 L116 46 L122 56 Z" fill="#263238" />
-
       {/* Body / Casual Gym Hoodie */}
       <path
         d="M68 140 C68 118, 80 110, 100 110 C120 110, 132 118, 132 140 L135 185 L65 185 Z"
@@ -231,7 +223,6 @@ export const GymBuddyCharacter: React.FC<BuddyProps> = ({ mood = 'workout', size
       <path d="M85 110 Q100 125 115 110" stroke="#ECEFF1" strokeWidth="4" strokeLinecap="round" fill="none" />
       <path d="M95 122 L93 140" stroke="#ECEFF1" strokeWidth="2.5" strokeLinecap="round" />
       <path d="M105 122 L107 140" stroke="#ECEFF1" strokeWidth="2.5" strokeLinecap="round" />
-
       {/* Arms & Reactions */}
       {mood === 'workout' && (
         <g>
@@ -296,9 +287,37 @@ export const GymBuddyCharacter: React.FC<BuddyProps> = ({ mood = 'workout', size
         </g>
       )}
 
-      {/* Head & Neck */}
+      {/* Head & Neck Base */}
       <rect x="94" y="98" width="12" height="15" rx="6" fill="#F5CBA7" />
       <circle cx="100" cy="75" r="30" fill="#F5CBA7" />
+      {/* Ears */}
+      <circle cx="69" cy="76" r="6" fill="#F5CBA7" />
+      <circle cx="131" cy="76" r="6" fill="#F5CBA7" />
+
+      {/* FULL, STYLISH MODERN HAIR (Drawn on TOP of head) */}
+      <g id="stylish-hair">
+        {/* Hair base covering top and sides */}
+        <path
+          d="M68 76 C66 52, 75 35, 100 35 C125 35, 134 52, 132 76 C131 72, 126 62, 124 58 C116 52, 108 55, 96 52 C84 56, 76 60, 72 68 Z"
+          fill="#1E272C"
+        />
+        {/* Modern textured quiff & volume layers */}
+        <path
+          d="M72 52 C70 38, 85 30, 104 32 C122 34, 132 42, 130 54 C120 44, 108 40, 94 42 C82 44, 76 48, 72 52 Z"
+          fill="#2C3840"
+        />
+        {/* Front textured fringe/bangs */}
+        <path
+          d="M72 62 Q80 50 92 56 Q104 48 116 55 Q126 53 128 62 Q120 56 108 58 Q94 56 82 60 Z"
+          fill="#1E272C"
+        />
+        {/* Hair strands & highlights */}
+        <path d="M85 38 Q95 34 105 35" stroke="#455A64" strokeWidth="2" strokeLinecap="round" fill="none" />
+        <path d="M92 44 Q104 40 115 42" stroke="#455A64" strokeWidth="2" strokeLinecap="round" fill="none" />
+        {/* Sideburns */}
+        <path d="M70 68 L70 76 L73 72 Z" fill="#1E272C" />
+        <path d="M130 68 L130 76 L127 72 Z" fill="#1E272C" />
+      </g>
 
       {/* Face Features */}
       {mood === 'confused' ? (

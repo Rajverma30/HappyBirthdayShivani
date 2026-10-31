@@ -56,7 +56,7 @@ export const HyderabadVsGym: React.FC = () => {
               Hyderabad is Lucky to Have You! 👑
             </h4>
             <p className="text-xs md:text-sm text-gray-700 leading-relaxed">
-              New city, famous biryani, great weather, exciting explorations, and a whole new set of people to confuse with your Bundelkhandi jokes!
+              New city, famous biryani, great weather, exciting explorations, and a whole new set of people to confuse with your hilarious jokes!
             </p>
             <div className="city-perks-list">
               <span className="perk-pill">🥘 Hyderabadi Biryani</span>

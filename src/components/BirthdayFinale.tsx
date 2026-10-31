@@ -172,24 +172,24 @@ export const BirthdayFinale: React.FC = () => {
 
           {/* Add Note Form */}
           <form onSubmit={handleAddStickyNote} className="sticky-note-form glass-panel">
-            <div className="flex flex-col sm:flex-row gap-2">
+            <div className="sticky-note-form-row">
               <input
                 type="text"
                 placeholder="Your name or nickname..."
                 value={newAuthor}
                 onChange={(e) => setNewAuthor(e.target.value)}
-                className="note-input-field sm:w-1/3"
+                className="note-input-field note-input-name"
               />
               <input
                 type="text"
                 placeholder="Write a cute/funny birthday wish for Shivani..."
                 value={newNote}
                 onChange={(e) => setNewNote(e.target.value)}
-                className="note-input-field sm:w-2/3"
+                className="note-input-field note-input-message"
               />
               <button type="submit" className="note-submit-btn">
-                <Send className="w-4 h-4 mr-1" />
-                Pin Note
+                <Send className="w-4 h-4 mr-1.5" />
+                Pin Note 📌
               </button>
             </div>
             {hasAdded && (

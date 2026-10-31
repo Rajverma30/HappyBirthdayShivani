@@ -1,7 +1,6 @@
 import React from 'react';
 import { HeroSection } from './components/HeroSection';
 import { GymChronicles } from './components/GymChronicles';
-import { BundelkhandiDept } from './components/BundelkhandiDept';
 import { JokeHallOfFame } from './components/JokeHallOfFame';
 import { HyderabadVsGym } from './components/HyderabadVsGym';
 import { AppreciationSection } from './components/AppreciationSection';
@@ -43,9 +42,6 @@ export const App: React.FC = () => {
             <button onClick={() => scrollToSection('chronicles')} className="nav-link-btn">
               Gym Chronicles 🏋️
             </button>
-            <button onClick={() => scrollToSection('bundelkhandi')} className="nav-link-btn">
-              Bundelkhandi 😂
-            </button>
             <button onClick={() => scrollToSection('trophies')} className="nav-link-btn">
               Hall of Fame 🏆
             </button>
@@ -70,25 +66,22 @@ export const App: React.FC = () => {
         {/* 2. The Gym Chronicles */}
         <GymChronicles />
 
-        {/* 3. Bundelkhandi Department */}
-        <BundelkhandiDept />
-
-        {/* 4. Shivani's Unfunny Joke Hall of Fame */}
+        {/* 3. Shivani's Unfunny Joke Hall of Fame */}
         <JokeHallOfFame />
 
-        {/* 5. Hyderabad vs Our Gym */}
+        {/* 4. Hyderabad vs Our Gym */}
         <HyderabadVsGym />
 
-        {/* 6. Okay, Jokes Apart... (The Sweet Side) */}
+        {/* 5. Okay, Jokes Apart... (The Sweet Side) */}
         <AppreciationSection />
 
-        {/* 7. Big Dreams, Bigger Success (Future Wishes) */}
+        {/* 6. Big Dreams, Bigger Success (Future Wishes) */}
         <FutureWishesSection />
 
-        {/* 8. Interactive Birthday Cake (The Main Highlight) */}
+        {/* 7. Interactive Birthday Cake (The Main Highlight) */}
         <CakeSection />
 
-        {/* 9. Grand Birthday Finale & Sticky Wall */}
+        {/* 8. Grand Birthday Finale & Sticky Wall */}
         <BirthdayFinale />
       </main>
     </div>

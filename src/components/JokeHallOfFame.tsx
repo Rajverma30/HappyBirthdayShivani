@@ -63,14 +63,14 @@ export const JokeHallOfFame: React.FC = () => {
     },
     {
       id: 5,
-      title: "Bundelkhandi Comedy Dept Head",
-      category: "Regional Pride",
-      icon: "🌺",
-      badge: "Permanent Cabinet Post",
-      verdict: "The only person who can deliver a roast in pure Bundelkhandi accent with zero remorse.",
+      title: "Master of 15-Minute Rest Sets",
+      category: "Workout Sabotage",
+      icon: "🍕",
+      badge: "Record Holder",
+      verdict: "Can stretch a 30-second set rest into a 15-minute gossip marathon without breaking a sweat.",
       citation:
-        "Conferred for carrying the proud flag of Bundelkhandi humor everywhere, keeping gym conversations spicy, authentic, and unforgettable.",
-      unfunnyScore: "Desi Factor: Max Level",
+        "Honored for the legendary talent of doing one set of bicep curls, sitting on the gym bench, and talking until the gym staff starts packing up.",
+      unfunnyScore: "Rest Time: 99.8%",
     },
   ];
 
