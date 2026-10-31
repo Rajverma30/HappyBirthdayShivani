@@ -89,7 +89,7 @@ export const FutureWishesSection: React.FC = () => {
           <div className="future-special-request-box">
             <span className="request-tag">Bas Ek Chhoti Si Request Hai, Madam Ji... 😂</span>
             <p className="request-body">
-              "Jab itni successful ho jaana ki duniya tumhe jaanne lage, toh apne purane gym buddy ko bhool mat jaana. Fame, success, Hyderabad, new adventures — sab enjoy karna, but hamari bakchodi aur ye unfunny jokes wali friendship yaad rakhna."
+              "Keep growing, keep achieving everything you dream of, and make the most of every opportunity life brings your way. Bas itna yaad rakhna, distance chahe jitna ho jaaye, kuch friendships aur unki bakchodi hamesha special rehti hain. ❤️."
             </p>
             <p className="request-sub">
               "Because some people are not meant to be forgotten, even when life takes them to different places. ❤️"
